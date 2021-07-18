@@ -17,7 +17,3 @@ if (allScores !== null) {
         highScore.appendChild(createLi);
     }
 }
-
-goBack.addEventListener("click", function () {
-    window.location.replace("./index.html");
-});

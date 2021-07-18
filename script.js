@@ -20,7 +20,7 @@ var questions = [
         answer: "quotes"
     },
     {
-        title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
+        title: "A useful tool for development and debugging when printing content to the debugger is:",
         choices: ["Javascript", "terminal / bash", "for loops", "console log"],
         answer: "console log"
     },
@@ -36,7 +36,7 @@ var wrapper = document.querySelector("#wrapper");
 
 var secondsLeft = 76;
 var holdInterval = 0;
-var penalty = 10;
+var penalty = 5;
 var ulCreate = document.createElement("ul");
 
 timer.addEventListener("click", function () {
@@ -72,9 +72,7 @@ function render(questionIndex) {
 }
 function compare(event) {
     var element = event.target;
-
     if (element.matches("li")) {
-
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         if (element.textContent == questions[questionIndex].answer) {
@@ -84,7 +82,6 @@ function compare(event) {
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
         }
-
     }
     questionIndex++;
 
